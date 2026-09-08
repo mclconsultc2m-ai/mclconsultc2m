@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — MCL Consult'C2M</title>
+<meta name="description" content="Discutons de vos besoins — contactez MCL Consult'C2M pour un premier échange.">
+<meta property="og:title" content="Contact — MCL Consult'C2M">
+<meta property="og:description" content="Discutons de vos besoins — contactez MCL Consult'C2M pour un premier échange.">
+<meta property="og:image" content="https://mclconsultc2m-ai.github.io/mclconsultc2m/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="MCL Consult'C2M — Conseil, Méthode & Mission">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MCL Consult'C2M">
+<meta property="og:url" content="https://mclconsultc2m-ai.github.io/mclconsultc2m/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/jpeg" href="monogramme.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <a href="index.html"><img src="logo-horizontal-sharp.png" alt="MCL Consult'C2M — Conseil, Méthode &amp; Mission"></a>
+    </div>
+    <nav class="main" aria-label="Navigation principale">
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="le-cabinet.html">Le Cabinet</a></li>
+        <li><a href="expertises.html">Expertises</a></li>
+        <li><a href="methode.html">Méthode</a></li>
+        <li><a href="zone-intervention.html">Zones d'intervention</a></li>
+        <li><a href="engagements.html">Engagements &amp; éthique</a></li>
+        <li><a href="fondatrice.html">Fondatrice &amp; dirigeante</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu">☰ Menu</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Contact</span>
+    <h1>Discutons de vos besoins</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-photo photo-slot">
+          <img src="photo-telephone.jpeg" alt="La consultante en télétravail, en échange téléphonique avec un client">
+        </div>
+        <p>Décrivez votre contexte et vos priorités, je reviens vers vous rapidement pour convenir d'un premier échange.</p>
+      </div>
+
+      <form id="contact-form" class="contact-form">
+        <div class="field field-row">
+          <div>
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+          <div>
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+        </div>
+        <div class="field field-row">
+          <div>
+            <label for="code-postal">Code postal *</label>
+            <input type="text" id="code-postal" name="code_postal" required>
+          </div>
+          <div>
+            <label for="ville">Ville *</label>
+            <input type="text" id="ville" name="ville" list="ville-suggestions" autocomplete="off" required>
+            <datalist id="ville-suggestions"></datalist>
+            <p id="ville-hint" style="font-size:0.75rem; color:#8a8172; margin:4px 0 0;"></p>
+          </div>
+        </div>
+        <div class="field field-row">
+          <div>
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div>
+            <label for="telephone">Téléphone *</label>
+            <div class="tel-row">
+              <select id="indicatif" name="indicatif" required aria-label="Indicatif téléphonique">
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+590">🇬🇵 +590 (Guadeloupe)</option>
+                <option value="+594">🇬🇫 +594 (Guyane)</option>
+                <option value="+596">🇲🇶 +596 (Martinique)</option>
+                <option value="+262">🇷🇪 +262 (Réunion/Mayotte)</option>
+                <option value="autre">Autre</option>
+              </select>
+              <input type="tel" id="telephone" name="telephone" required>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="structure-type">Vous êtes ? *</label>
+          <select id="structure-type" name="vous_etes" required>
+            <option value="">— Sélectionner —</option>
+            <option>Dirigeant de TPE/PME</option>
+            <option>Profession libérale</option>
+            <option>Porteur de projet de création d'entreprise</option>
+            <option>Élu / cabinet</option>
+            <option>Collectivité territoriale</option>
+            <option>Association / club</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sujet">Sujet *</label>
+          <select id="sujet" name="sujet" required>
+            <option value="">— Sélectionner —</option>
+            <option>Assistanat externalisé</option>
+            <option>Accompagnement à la création d'entreprise</option>
+            <option>Création de site internet</option>
+            <option>Conseils et accompagnement TPE/PME &amp; professions libérales</option>
+            <option>Accompagnement élus &amp; cabinet</option>
+            <option>Collectivité territoriale</option>
+            <option>Association &amp; club</option>
+            <option>Autre demande</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Votre message *</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div class="checkbox-row" style="margin-bottom:16px;">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="margin:0;">En soumettant ce formulaire, j'accepte que les informations soient exploitées dans le cadre strict de ma demande. *</label>
+        </div>
+
+        <!-- ⚠️ reCAPTCHA : remplacez VOTRE_SITE_KEY_ICI par votre clé (voir instructions envoyées) -->
+        <div class="g-recaptcha" data-sitekey="6LcLza4tAAAAAAPsGO5KiTacv_fbSR9ZIeKXHPSv"></div>
+
+        <p class="form-note" style="margin-top:0; margin-bottom:16px;">Vos données sont utilisées uniquement pour traiter votre demande. Elles ne sont ni cédées ni revendues à des tiers. En savoir plus dans notre <a href="confidentialite.html" style="color:var(--navy); text-decoration:underline;">politique de confidentialité</a>.</p>
+
+        <button class="submit-btn" type="submit">Envoyer le message</button>
+        <p class="form-note" id="form-status">Vous recevrez un accusé de réception automatique par e-mail, avec le récapitulatif de votre demande.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <span>Adresse : Bois-Colombes (92)</span>
+      <span>E-mail : mclconsultc2m@gmail.com</span>
+      <span>Tél. : +33 6 68 16 46 78</span>
+    </div>
+    <div class="footer-links">
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="confidentialite.html">Politique de confidentialité</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MCL Consult'C2M — Conseil, Méthode &amp; Mission</span>
+      <a href="#top">Retour en haut ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  const EMAILJS_PUBLIC_KEY = "OJ1AREYq3-d7TUP3B";
+  const EMAILJS_SERVICE_ID = "service_fmg65oh";
+  const EMAILJS_TEMPLATE_NOTIFICATION = "template_tm411uh";
+  const EMAILJS_TEMPLATE_AUTOREPLY = "template_ftk6xmx";
+
+  if (window.emailjs) emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  const codePostalInput = document.getElementById('code-postal');
+  const villeInput = document.getElementById('ville');
+  const villeSuggestions = document.getElementById('ville-suggestions');
+  const villeHint = document.getElementById('ville-hint');
+  let lastLookedUp = '';
+
+  codePostalInput.addEventListener('input', function(){
+    const cp = this.value.trim();
+    if (cp.length === 5 && /^[0-9]{5}$/.test(cp) && cp !== lastLookedUp) {
+      lastLookedUp = cp;
+      villeHint.textContent = 'Recherche de la ville…';
+      fetch('https://geo.api.gouv.fr/communes?codePostal=' + cp + '&fields=nom&format=json')
+        .then(res => res.ok ? res.json() : Promise.reject())
+        .then(data => {
+          villeSuggestions.innerHTML = '';
+          if (Array.isArray(data) && data.length > 0) {
+            data.forEach(commune => {
+              const opt = document.createElement('option');
+              opt.value = commune.nom;
+              villeSuggestions.appendChild(opt);
+            });
+            if (!villeInput.value) villeInput.value = data[0].nom;
+            villeHint.textContent = data.length > 1
+              ? 'Plusieurs communes possibles pour ce code postal — vérifiez ou modifiez si besoin.'
+              : '';
+          } else {
+            villeHint.textContent = "Ville non trouvée automatiquement, merci de la saisir manuellement.";
+          }
+        })
+        .catch(() => {
+          villeHint.textContent = "Impossible de vérifier la ville automatiquement, merci de la saisir manuellement.";
+        });
+    }
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    if (window.grecaptcha && document.querySelector('.g-recaptcha')) {
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (!recaptchaResponse) {
+        status.textContent = "Merci de valider le reCAPTCHA avant d'envoyer votre message.";
+        status.style.color = '#c0392b';
+        return;
+      }
+    }
+
+    const btn = form.querySelector('.submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours…';
+
+    const fd = new FormData(form);
+    const val = (name) => (fd.get(name) || '').toString().trim();
+
+    const params = {
+      prenom: val('prenom'),
+      nom: val('nom'),
+      code_postal: val('code_postal'),
+      ville: val('ville'),
+      email: val('email'),
+      indicatif: val('indicatif'),
+      telephone: val('telephone'),
+      vous_etes: val('vous_etes'),
+      sujet: val('sujet'),
+      message: val('message')
+    };
+
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_NOTIFICATION, params)
+      .then(() => emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_AUTOREPLY, params))
+      .then(() => {
+        form.reset();
+        if (window.grecaptcha) grecaptcha.reset();
+        status.textContent = "Votre message a bien été envoyé. Vous allez recevoir un accusé de réception par e-mail.";
+        status.style.color = '#1B3A5C';
+      })
+      .catch((err) => {
+        const detail = (err && (err.text || err.message)) ? ` (détail technique : ${err.text || err.message})` : '';
+        status.textContent = "L'envoi a échoué. Merci de réessayer ou de m'écrire directement à mclconsultc2m@gmail.com." + detail;
+        status.style.color = '#c0392b';
+      })
+      .finally(() => {
+        btn.disabled = false;
+        btn.textContent = 'Envoyer le message';
+      });
+  });
+</script>
+</body>
+</html>
